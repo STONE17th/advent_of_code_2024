@@ -38,7 +38,7 @@ def solution(data: str):
     return sum([a * b for a, b in result])
 
 
-# print(solution(input_data))
+print(solution(input_data))
 #
 # pattern = r'mul\(\d{1,3},\d{1,3}\d\)'
 # result = re.findall(pattern, input_data)
