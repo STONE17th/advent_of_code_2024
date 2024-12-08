@@ -1,10 +1,6 @@
 from itertools import product
 
 
-# def all_combinations(any_list):
-#     return chain(*map(lambda x: combinations(any_list, x), range(0, len(any_list) + 1)))
-
-
 def read_data(path):
     with open(path, 'r') as file:
         data = [row.strip().split(': ') for row in file.readlines()]
@@ -16,10 +12,7 @@ def solution(path: str) -> int:
     operations = ('+', '*', '||')
     input_data = read_data(path)
     result = 0
-    tries = 0
     for answer, args in input_data:
-        tries += 1
-        print(tries)
         count_operations = len(args) - 1
         operators = tuple(product(operations, repeat=count_operations))
         for item in operators:
@@ -37,4 +30,4 @@ def solution(path: str) -> int:
     return result
 
 
-print(solution('input_data.txt'))
+print(solution('test_data.txt'))
