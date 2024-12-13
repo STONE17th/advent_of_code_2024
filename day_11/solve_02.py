@@ -1,8 +1,12 @@
+from functools import cache
+
+
 def read_data(path: str):
     with open(path, 'r') as file:
         return file.read().strip().split()
 
 
+@cache
 def calculate_stone(slot: str | int, depth: int, count_blinks: int):
     if slot == '0':
         data = ['1']
@@ -31,4 +35,4 @@ def solution(path: str, blink_count: int):
     return total_stones
 
 
-print(solution('input_data.txt', 25))
+print(solution('input_data.txt', 75))
